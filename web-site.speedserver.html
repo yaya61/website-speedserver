@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commerce de Serveurs VPN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur notre plateforme de serveurs VPN</h1>
+        <nav>
+            <ul>
+                <li><a href="#acheteur">Acheteur</a></li>
+                <li><a href="#vendeur">Vendeur</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="acheteur">
+        <h2>Espace Acheteur</h2>
+        <button onclick="showLogin('acheteur')">Connexion</button>
+        <button onclick="showRegister('acheteur')">Inscription</button>
+    </section>
+
+    <section id="vendeur">
+        <h2>Espace Vendeur</h2>
+        <button onclick="showLogin('vendeur')">Connexion</button>
+        <button onclick="showRegister('vendeur')">Inscription</button>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Inscription</h2>
+            <form id="registerForm">
+                <input type="text" id="registerName" placeholder="Nom complet" required>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Mot de passe" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="dashboard" style="display: none;">
+        <h2>Tableau de Bord Vendeur</h2>
+        <form id="productForm">
+            <input type="text" id="productName" placeholder="Nom du produit" required>
+            <textarea id="productDescription" placeholder="Description" required></textarea>
+            <input type="number" id="productPrice" placeholder="Prix" required>
+            <button type="submit">Ajouter le produit</button>
+        </form>
+        <div id="productList"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
